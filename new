@@ -12,29 +12,29 @@ moods = {
 # Create a database of movies
 movies = [
     {
-        "Title": "The Shawshank Redemption",
-        "Genre": "Drama",
-        "Plot": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency."
+        "title": "The Shawshank Redemption",
+        "genre": "Drama",
+        "plot": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency."
     },
     {
-        "Title": "The Godfather",
-        "Genre": "Crime",
-        "Plot": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son."
+        "title": "The Godfather",
+        "genre": "Crime",
+        "plot": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son."
     },
     {
-        "Title": "Forrest Gump",
-        "Genre": "Comedy",
-        "Plot": "The presidencies of Kennedy and Johnson, the Vietnam War, and the Watergate scandal are covered in this Oscar-winning chronicle of an Alabama man's journey through life."
+        "title": "Forrest Gump",
+        "genre": "Comedy",
+        "plot": "The presidencies of Kennedy and Johnson, the Vietnam War, and the Watergate scandal are covered in this Oscar-winning chronicle of an Alabama man's journey through life."
     },
     {
-        "Title": "The Dark Knight",
-        "Genre": "Action",
-        "Plot": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice."
+        "title": "The Dark Knight",
+        "genre": "Action",
+        "plot": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice."
     },
     {
-        "Title": "The Conjuring",
-        "Genre": "Horror",
-        "Plot": "Paranormal investigators Ed and Lorraine Warren work to help a family terrorized by a dark presence in their farmhouse."
+        "title": "The Conjuring",
+        "genre": "Horror",
+        "plot": "Paranormal investigators Ed and Lorraine Warren work to help a family terrorized by a dark presence in their farmhouse."
     }
 ]
 
