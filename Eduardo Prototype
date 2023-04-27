@@ -1,0 +1,43 @@
+# Importing the necessary libraries
+import random
+
+# Creating a dictionary of movies with genre and plot summary
+movies = {
+    "Action": {
+        "The Dark Knight": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+        "Mission: Impossible - Fallout": "Ethan Hunt and his IMF team, along with some familiar allies, race against time after a mission gone wrong.",
+        "John Wick": "An ex-hit-man comes out of retirement to track down the gangsters that killed his dog and took everything from him."
+    },
+    "Comedy": {
+        "The Hangover": "Three buddies wake up from a bachelor party in Las Vegas, with no memory of the previous night and the bachelor missing. They make their way around the city in order to find their friend before his wedding.",
+        "Bridesmaids": "Competition between the maid of honor and a bridesmaid, over who is the bride's best friend, threatens to upend the life of an out-of-work pastry chef.",
+        "Superbad": "Two co-dependent high school seniors are forced to deal with separation anxiety after their plan to stage a booze-soaked party goes awry."
+    },
+    "Romance": {
+        "The Notebook": "A poor yet passionate young man falls in love with a rich young woman, giving her a sense of freedom, but they are soon separated because of their social differences.",
+        "A Walk to Remember": "The story of two North Carolina teens, Landon Carter and Jamie Sullivan, who are thrown together after Landon gets into trouble and is made to do community service.",
+        "The Fault in Our Stars": "Two teenage cancer patients begin a life-affirming journey to visit a reclusive author in Amsterdam."
+    }
+}
+
+# Taking user input for their mood
+mood = input("What is your mood? (Action/Comedy/Romance): ")
+
+# Suggesting a movie based on the user's mood
+if mood.lower() == "action":
+    movie = random.choice(list(movies["Action"].keys()))
+    print(f"Movie: {movie}")
+    print(f"Genre: Action")
+    print(f"Plot summary: {movies['Action'][movie]}")
+elif mood.lower() == "comedy":
+    movie = random.choice(list(movies["Comedy"].keys()))
+    print(f"Movie: {movie}")
+    print(f"Genre: Comedy")
+    print(f"Plot summary: {movies['Comedy'][movie]}")
+elif mood.lower() == "romance":
+    movie = random.choice(list(movies["Romance"].keys()))
+    print(f"Movie: {movie}")
+    print(f"Genre: Romance")
+    print(f"Plot summary: {movies['Romance'][movie]}")
+else:
+    print("Invalid mood! Please choose from Action, Comedy, or Romance.")
