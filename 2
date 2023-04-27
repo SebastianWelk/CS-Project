@@ -1,0 +1,50 @@
+import random
+import json
+
+# Define the different moods and their corresponding movie genres
+moods = {
+    "happy": ["Comedy", "Romance", "Musical"],
+    "sad": ["Drama", "Romance", "War"],
+    "romantic": ["Romance", "Drama", "Comedy"],
+    "excited": ["Action", "Adventure", "Thriller"],
+    "scary": ["Horror", "Thriller", "Mystery"]
+}
+
+# Load the movie database from a JSON file
+with open("movies.json", "r") as f:
+    movies = json.load(f)
+
+# Function to suggest movies based on mood
+def suggest_movie(mood):
+    # Find movies with genres that match the mood
+    possible_movies = []
+    for movie in movies:
+        if movie["genre"] in moods[mood]:
+            possible_movies.append(movie)
+    
+    # Select two random movies from the possible matches
+    suggestions = random.sample(possible_movies, 2)
+    
+    # Print the movie suggestions
+    print(f"\nHere are two movie suggestions for your {mood} mood:")
+    for suggestion in suggestions:
+        print(f"\nTitle: {suggestion['title']}\nGenre: {suggestion['genre']}\nPlot: {suggestion['plot']}")
+
+# Main program loop
+while True:
+    # Prompt the user for their mood
+    user_mood = input("\nWhat's your mood? (happy, sad, romantic, excited, or scary): ")
+    
+    # Check if the mood is valid
+    if user_mood in moods:
+        # Suggest movies based on the user's mood
+        suggest_movie(user_mood)
+    else:
+        print("\nInvalid mood input.")
+    
+    # Ask the user if they want to continue
+    user_input = input("\nDo you want to suggest another movie? (yes or no): ")
+    if user_input.lower() != "yes":
+        break
+
+print("\nThanks for using our movie suggestion program! Enjoy watching :) ")
