@@ -1,0 +1,64 @@
+import random
+
+# Define the moods and their corresponding movie genres
+moods = {
+    "happy": ["Comedy", "Romance", "Musical"],
+    "sad": ["Drama", "Romance", "War"],
+    "romantic": ["Romance", "Drama", "Comedy"],
+    "excited": ["Action", "Adventure", "Thriller"],
+    "scary": ["Horror", "Thriller", "Mystery"]
+}
+
+# Create a database of movies
+movies = [
+    {
+        "title": "The Shawshank Redemption",
+        "genre": "Drama",
+        "plot": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency."
+    },
+    {
+        "title": "The Godfather",
+        "genre": "Crime",
+        "plot": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son."
+    },
+    {
+        "title": "Forrest Gump",
+        "genre": "Comedy",
+        "plot": "The presidencies of Kennedy and Johnson, the Vietnam War, and the Watergate scandal are covered in this Oscar-winning chronicle of an Alabama man's journey through life."
+    },
+    {
+        "title": "The Dark Knight",
+        "genre": "Action",
+        "plot": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice."
+    },
+    {
+        "title": "The Conjuring",
+        "genre": "Horror",
+        "plot": "Paranormal investigators Ed and Lorraine Warren work to help a family terrorized by a dark presence in their farmhouse."
+    }
+]
+
+# Function to suggest movies based on mood
+def suggest_movie(mood):
+    # Find movies with genres that match the mood
+    possible_movies = []
+    for movie in movies:
+        if movie["genre"] in moods[mood]:
+            possible_movies.append(movie)
+    
+    # Select two random movies from the possible matches
+    suggestions = random.sample(possible_movies, 2)
+    
+    # Print the movie suggestions
+    print(f"Here are two movie suggestions for your {mood} mood:")
+    for suggestion in suggestions:
+        print(f"\nTitle: {suggestion['title']}\nGenre: {suggestion['genre']}\nPlot: {suggestion['plot']}")
+
+# Prompt the user for their mood
+user_mood = input("What's your mood? (happy, sad, romantic, excited, or scary): ")
+
+# Suggest movies based on user's mood
+if user_mood in moods:
+    suggest_movie(user_mood)
+else:
+    print("Invalid mood input.")
